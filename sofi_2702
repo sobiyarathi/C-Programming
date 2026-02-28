@@ -1,0 +1,232 @@
+Basics, Variables, and Storage Classes
+1.Write a C program to calculate the area and perimeter of a rectangle using float variables.
+#include <stdio.h>
+int main()
+ {
+    float l,b;
+    l=3;
+    b=5;
+    printf("The area is= %f\n",l*b);
+    printf("The perimeter is= %f\n",2*(l+b));
+   return 0;
+}
+2.Create a program that takes a temperature in Celsius as input and converts it to Fahrenheit.
+#include <stdio.h>
+int main() {
+    int c,f;
+    c=20;
+    f=(c*9/5)+32;
+    printf("the fahrenheit is = %d\n",f);
+    return 0;
+}
+3.Write a program that uses the const keyword to define the value of PI (3.14159) and calculates the area of a circle.
+#include <stdio.h>
+int main() {
+   const float PI=3.14159;
+   float r=2;
+   printf("the area of circle is= %f\n",PI*r*r);
+   return 0;
+}
+4.Write a program to demonstrate what happens when a variable is declared but not initialized (printing a garbage value) using the auto storage class.
+#include <stdio.h>
+int main() {
+    auto int x;
+    printf("Garbage value: %d\n", x);
+    return 0;
+}
+5.Create a program to perform addition, subtraction, multiplication, division, and modulo operations on two integers, displaying each result on a new line.
+#include <stdio.h>
+int main() {
+    int a=7,b=5;
+    printf("the addition is: %d\n", a+b);
+    printf("the subtraction: %d\n", a-b);
+    printf("the multiplication is: %d\n", a*b);
+    printf("the division is: %d\n", a/b);
+    printf("the modulo is: %d\n", a%b);
+    return 0;
+}
+Operators
+6.Write a program to find the largest of three numbers using only the conditional (ternary ?:) operator.
+#include <stdio.h>
+int main() {
+    int a,b,c;
+    a=20,b=10,c=22;
+    int max = (a>b)?((a>c)?a:c):((b>c)?b:c);
+    printf("Largest = %d\n", max);
+    return 0;
+}
+7.Write a C program to read an integer and print its complement using the Bitwise NOT (~) operator.
+#include <stdio.h>
+int main() {
+    int a;
+    a=0;
+    printf("the compliment is: %d\n",~a);
+    return 0;
+}
+8.Implement a program to right-shift (>>) a positive integer by 2 positions and explain in a comment how the value mathematically changes.
+#include <stdio.h>
+int main() {
+    int n;
+    scanf("%d",&n);
+    printf("the result is = %d\n",n>>2);
+    return 0;
+}
+9.Write a program using the sizeof operator to find the size of an integer expression (e.g., sizeof(a + b)).
+#include <stdio.h>
+int main() {
+    int a=5,b=10;
+    printf("the Size is= %d\n", sizeof(a+b));
+    return 0;
+}
+10.Create a program that demonstrates the pre-increment (++a) and post-increment (a++) operators, printing the differences in their behavior.
+#include <stdio.h>
+int main() {
+    int a;
+    scanf("%d",&a);
+    printf("Pre = %d\n", ++a);
+    printf("Post = %d\n", a++);
+    printf("Final = %d\n", a);
+    return 0;
+}
+Decision Making Statements
+11.Write a program that accepts an integer and checks if it is a positive or negative number using a simple if-else statement.
+#include <stdio.h>
+int main()
+{
+    int num;
+    scanf("%d",&num);
+    if(num>=0)
+    printf("the number is possitive %d\n");
+    else
+    printf("the number is negative %d\n");
+    return 0;
+}
+12.Write a program to check whether a given character input by the user is an alphabet, a digit, or a special character.
+#include <stdio.h>
+int main()
+{
+    char ch;
+    scanf("%c",&ch);
+    if(ch>='A' && ch<='Z' || ch>='a' && ch<='z')
+    printf("the character is alphabet \n");
+    else if(ch>='0' && ch<='9')
+    printf("the character is digit \n");
+    else
+    printf("the character is special character \n");
+    return 0;
+}
+13.Write a program to check if a given year is a leap year using a nested if statement (do not use logical AND/OR).
+#include<stdio.h>
+int main()
+{
+   int year;
+   printf("the year is:");
+   scanf("%d",&year);
+    if(year%4==0)
+    printf("the year is leap year %d\n");
+    else
+    printf("the year is not leap year %d\n");
+    return 0;
+}
+14.Create a calculator using the switch statement that takes an operator (+, -, *, /, %) and two integer operands from the user.
+#include <stdio.h>
+int main() {
+    int a, b;
+    char op;
+    printf("Enter first integer: ");
+    scanf("%d", &a);
+    printf("Enter second integer: ");
+    scanf("%d", &b);
+    printf("Enter an operator: ");
+    scanf(" %c", &op); 
+    switch (op) {
+        case '+':
+            printf("Result = %d\n", a + b);
+            break;
+        case '-':
+            printf("Result = %d\n", a - b);
+            break;
+        case '*':
+            printf("Result = %d\n", a * b);
+            break;
+        case '/':
+            printf("Result = %d\n", a / b);
+            break;
+        case '%':
+            printf("Result = %d\n", a % b);
+            break;
+        default:
+            printf("Invalid operator\n");
+    }
+
+    return 0;
+}
+15.Write a program to print the names of the days of the week based on an input number (1 for Monday, 2 for Tuesday, etc.) using switch. Include a default case for invalid inputs.
+#include<stdio.h>
+int main()
+{
+    int day;
+    scanf("%d",&day);
+    switch (day)
+    {
+        case 1:
+        printf("the day is monday \n");
+        break;
+        case 2:
+        printf("the day is tuesday \n");
+        break; 
+        case 3:
+        printf("the day is wednesday \n");
+        break;
+        case 4:
+        printf("the day is thursday \n");
+        break; 
+        case 5:
+        printf("the day is friday \n");
+        break;
+        case 6:
+        printf("the day is saturday \n");
+        break;
+        case 7:
+        printf("the day is sunday \n");
+        break;
+        default:
+        printf(" invalid day \n");
+        break;
+    }
+    return 0;
+}
+Looping Statements (For, While, Do-While)
+16.Write a program to calculate the sum of the first N natural numbers using a while loop.
+#include<stdio.h>
+int main()
+{
+    int n,sum=0;
+    scanf("%d",&n);
+    while(n>=0)
+   {
+    sum=n+sum;
+    n--;
+   }
+   printf("the sum of natural number is: %d\n",sum);
+   return 0;
+}
+17.Implement a program to display the Fibonacci series up to a given number of terms using a for loop.
+#include<stdio.h>
+int main()
+{
+    int a=0,b=1,c,n;
+    scanf("%d",&n);
+    printf("%d\n",a);
+    printf("%d\n",b);
+    while(n>0)
+    {
+        c=a+b;
+        printf("%d\n",c);
+        a=b;
+        b=c;
+        n--;  
+    }
+   
+   return 0;
+}
