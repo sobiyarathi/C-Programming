@@ -1,0 +1,159 @@
+1. Write a program to calculate $x^y$ using the pow() function from <math.h>.
+#include<stdio.h>
+#include<math.h>
+
+int power(int a,int b)
+{
+    int power=pow(a,b);
+    printf("the power is : %d\n",power);
+    return power;
+}
+int main()
+{
+    int a,b;
+    int c=power(3,2);
+    return 0
+   
+}
+2. Create a program using switch to check if a character is a Vowel or Consonant.
+#include<stdio.h>
+int main()
+{
+    char vow; 
+    scanf("%c",&vow);
+    switch(vow)
+    {
+    case 'a':
+    printf("vowvels %c\n");
+    break;
+    case 'e':
+    printf("vowvels %c\n");
+    break;
+    case 'i':
+    printf("vowvels %c\n");
+    break;
+    case 'o':
+    printf("vowvels %c\n");
+    break;
+    case 'u':
+    printf("vowvels %c\n");
+    break;
+    case 'A':
+    printf("vowvels %c\n");
+    break;
+    case 'E':
+    printf("vowvels %c\n");
+    break;
+    case 'I':
+    printf("vowvels %c\n");
+    break;
+    case 'O':
+    printf("vowvels %c\n");
+    break;
+    case 'U':
+    printf("vowvels %c\n");
+    break;
+default:
+    printf("consonant %c\n");
+}
+return 0;
+}
+3. Write a program to print the Fibonacci series up to 50 using iteration.
+#include<stdio.h>
+int main()
+{
+    int a = 0, b = 1, c=0;
+
+    printf("%d ", a);
+    printf("%d ", b);
+while(c<=50)
+    {
+        c = a + b;
+        if(c<=50)
+        printf("%d ", c);
+        a = b;
+        b = c;
+    }
+
+    return 0;
+}
+4. Implement a program to check if a number is an Armstrong Number.
+#include <stdio.h>
+int main()
+{
+    int n, temp, digit, sum = 0;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    temp = n;  
+    while(n > 0)
+    {
+        digit = n % 10;             
+        sum = sum + (digit * digit * digit);  
+        n = n / 10;                  
+    }
+    if(sum == temp)
+        printf("This is an Armstrong number\n");
+    else
+        printf("This is not an Armstrong number\n");
+    return 0;
+}
+5. Write a program to generate all Prime Numbers between 1 and 100.
+#include<stdio.h>
+int main()
+{
+    int i, j, count;
+    for(i = 2; i <= 100; i++)
+    {
+        count = 0;
+        for(j = 1; j <= i; j++)
+        {
+            if(i % j == 0)
+                count++;
+        }
+        if(count == 2)
+            printf("%d ", i);
+    }
+    return 0;
+}
+6. Create a program to sort an array of 5 integers in ascending order (Bubble Sort).
+#include<stdio.h>
+int main()
+{
+    int a[5], i, j, temp;
+    for(i=0;i<5;i++)
+        scanf("%d",&a[i]);
+    for(i=0;i<5;i++)
+    {
+        for(j=0;j<4;j++)
+        {
+            if(a[j] > a[j+1])
+            {
+                temp = a[j];
+                a[j] = a[j+1];
+                a[j+1] = temp;
+            }
+        }
+    }
+    for(i=0;i<5;i++)
+        printf("%d ", a[i]);
+    return 0;
+}
+7.Write a program to merge two small arrays into a single larger array.
+#include<stdio.h>
+int main()
+{
+  int a[3]={1,2,3},b[3]={4,5,6},c[6],i;
+  for(i=0;i<3;i++)
+  {
+      c[i]=a[i];
+  }
+    for(i=0;i<3;i++)
+  {
+      c[i+3]=b[i];
+  }
+    for(i=0;i<6;i++)
+  {
+     printf("%d",c[i]);
+  }
+    return 0;
+}
